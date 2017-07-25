@@ -1,0 +1,2 @@
+json.extract! medical, :id, :name, :str_application_period, :end_application_period, :str_implementation_period, :end_implementation_period, :remarks, :deleteflg, :created_at, :updated_at
+json.url medical_url(medical, format: :json)

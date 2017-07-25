@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= t('activerecord.models.office') %>マスター</h1>
+
+<p>
+  <strong><%= t('activerecord.attributes.office.name') %>:</strong>
+  <%= @office.name %>
+</p>
+
+<p>
+  <strong><%= t('activerecord.attributes.office.number') %>:</strong>
+  <%= @office.number %>
+</p>
+
+<p>
+  <strong><%= t('activerecord.attributes.office.tel') %>:</strong>
+  <%= @office.tel %>
+</p>
+
+<p>
+  <strong><%= t('activerecord.attributes.office.zipcode') %>:</strong>
+  <%= @office.zipcode %>
+</p>
+
+<p>
+  <strong><%= t('activerecord.attributes.office.address') %>:</strong>
+  <%= @office.address %>
+</p>
+
+<p>
+  <strong><%= t('activerecord.attributes.office.responsibleperson') %>:</strong>
+  <%= @office.responsibleperson %>
+</p>
+
+<p>
+  <strong><%= t('activerecord.attributes.office.deleteflg') %>:</strong>
+  <%= @office.deleteflg %>
+</p>
+
+<%= link_to '編集', edit_office_path(@office) %> |
+<%= link_to '一覧', offices_path %>

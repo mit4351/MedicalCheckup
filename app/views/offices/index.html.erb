@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= t('activerecord.models.office') %>マスター</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= t('activerecord.attributes.office.name') %></th>
+      <th><%= t('activerecord.attributes.office.number') %></th>
+      <th><%= t('activerecord.attributes.office.tel') %></th>
+      <th><%= t('activerecord.attributes.office.responsibleperson') %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @offices.each do |office| %>
+      <tr>
+        <td><%= office.name %></td>
+        <td><%= office.number %></td>
+        <td><%= office.tel %></td>
+        <td><%= office.responsibleperson %></td>
+        <td><%= link_to '詳細', office %></td>
+        <td><%= link_to '編集', edit_office_path(office) %></td>
+        <td><%= link_to '削除', office, method: :delete, data: { confirm: '削除しても　良いですか?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '新規', new_office_path %>

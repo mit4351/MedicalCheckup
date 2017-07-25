@@ -1,0 +1,16 @@
+# =============
+# 事業所マスタ
+# =============
+ja:
+  activerecord:
+    models:
+      office: 事業所
+    attributes:
+      office:
+        name: 事業所名称
+        number: 事業所番号
+        tel: 電話番号
+        zipcode: 郵便番号
+        address: 住所
+        responsibleperson: 担当者
+        deleteflg: 削除フラグ

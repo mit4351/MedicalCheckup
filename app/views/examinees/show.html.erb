@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<h1>受診者マスター</h1>
+
+<p>
+  <strong>受診者名称:</strong>
+  <%= @examinee.name %>
+</p>
+
+<p>
+  <strong>受診者名称:</strong>
+  <%= @examinee.name %>
+</p>
+
+<p>
+  <strong>削除フラグ:</strong>
+  <%= @examinee.deleteflg %>
+</p>
+
+<%= link_to '編集', edit_medical_examinee_path(@examinee) %> |
+<%= link_to '戻る', medical_path(@examinee.medical.id) %>

@@ -1,0 +1,52 @@
+<%= form_for(inspectionitem) do |f| %>
+  <% if inspectionitem.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(inspectionitem.errors.count, "error") %> prohibited this inspectionitem from being saved:</h2>
+
+      <ul>
+      <% inspectionitem.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :number %>
+    <%= f.number_field :number %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :amountofmone %>
+    <%= f.number_field :amountofmone %>
+  </div>
+
+  <div class="field">
+    <%= f.label :subsidy %>
+    <%= f.number_field :subsidy %>
+  </div>
+
+  <div class="field">
+    <%= f.label :remarks %>
+    <%= f.text_area :remarks %>
+  </div>
+
+  <div class="field">
+    <%= f.label :hospitalflg %>
+    <%= f.check_box :hospitalflg %>
+  </div>
+
+  <div class="field">
+    <%= f.label :deleteflg %>
+    <%= f.check_box :deleteflg %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

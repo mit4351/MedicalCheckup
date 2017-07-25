@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MedicalCheckup</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= csrf_meta_tags %>
+    <%= favicon_link_tag('favicon.ico') %>
+  </head>
+
+<body>
+  <header>
+    <ul id="dropmenu" class="container clearfix">
+        <% if authority? %>
+            <li><%= link_to 'ログアウト', signout_path, method: :delete %></li>
+
+            <li><a href="#">健診</a>
+                <ul>
+                    <li><a href="#">健診マスタ</a>
+                         <ul>
+                            <li><%= link_to '健診一覧', medicals_path %></li>
+                            <li><%= link_to '健診新規作成', new_medical_path %></li>
+                            <li><a href="#">健診機関検査項目</a>
+                                <ul>
+                                    <li><a href="#">健診検査項目一覧</a></li>
+                                    <li><a href="#">健診検査項目作成</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">健診対象者</a>
+                                <ul>
+                                    <li><a href="#">健診対象者一覧</a></li>
+                                    <li><a href="#">健診対象者取込み</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#">子メニュー</a></li>
+                    <li><a href="#">金額確定</a></li>
+                    <li><a href="#">請求書印刷</a>
+                        <ul>
+                          <li><a href="#">孫メニュー</a></li>
+                          <li><a href="#">孫メニュー</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">支払台帳印刷</a>
+                        <ul>
+                          <li><a href="#">孫メニュー</a></li>
+                          <li><a href="#">孫メニュー</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">報告書印刷</a>
+                        <ul>
+                          <li><a href="#">孫メニュー</a></li>
+                          <li><a href="#">孫メニュー</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+
+            <li><a href="#">管理</a>
+                <ul>
+                    <li><a href="#">検査項目マスタ</a>
+                        <ul>
+                            <li><%= link_to '検査項目一覧', inspectionitems_path %></li>
+                            <li><%= link_to '検査項目新規作成', new_inspectionitem_path %></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">アカウント管理</a>
+                        <ul>
+                            <li><%= link_to 'アカウント一覧', users_path %></li>
+                            <li><%= link_to 'アカウント新規作成', signup_path %></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">医療機関マスタ</a>
+                        <ul>
+                            <li><%= link_to '医療機関一覧', hospitals_path %></li>
+                            <li><%= link_to '医療機関新規作成', new_hospital_path %></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">事業所マスタ</a>
+                        <ul>
+                            <li><%= link_to '事業所一覧', offices_path %></li>
+                            <li><%= link_to '事業所新規作成', new_office_path %></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+
+            <li><a href="#">&nbsp;</a></li>
+
+            <li><%= link_to signed_username + ' 様' , current_user %></li>
+
+        <% elsif signed_in? %>
+            <li><%= link_to 'ログアウト', signout_path, method: :delete %></li>
+            <li><a href="#">予約</a></li>
+            <li><a href="#">受診完了</a></li>
+            <li><a href="#">&nbsp;</a></li>
+            <li><%= link_to signed_username + ' 様' , current_user %></li>
+        <% else %>
+            <li><%= link_to 'ログイン', signin_path %></li>
+            <li><a href="#">&nbsp;</a></li>
+            <li><a href="#">&nbsp;</a></li>
+            <li><a href="#">&nbsp;</a></li>
+            <li><a href="#">Help</a></li>
+        <% end %>
+    </ul>
+  </header>
+  <main>
+     <hr style="margin:0;">
+     <%= yield %>
+  </main>
+
+  <footer>
+    <p>Copyright© OKIGIN SPO All Rights Reserved.<p>
+  </footer>
+</body>
+</html>

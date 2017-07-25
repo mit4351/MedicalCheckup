@@ -1,0 +1,28 @@
+<h3>プロフィール</h3>
+
+<table border="1">
+<tr>
+<th>名前</th>
+<td><%= @user.name %></td>
+</tr>
+<tr>
+<th>被保険者コード</th>
+<td><%= @user.enpno %></td>
+</tr>
+<tr>
+<th>authority</th>
+<td><%= @user.authority %></td>
+</tr>
+<tr>
+<th>authority</th>
+<td><%= select_tag 'note[point]', options_for_select(["1", "2", "3", "4", "5"]) %></td>
+</tr>
+</table>
+
+<% if current_user?(@user) %>
+<p><%= link_to '編集', edit_user_path %></p>
+<% end %>
+<%= link_to '一覧', users_path %>
+
+<br>
+<%= link_to "PDFで表示",user_path(@user, format: "pdf"), :target => "_blank" ,:class => 'btn btn-primary' %>

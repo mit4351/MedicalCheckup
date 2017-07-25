@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @inspectionitem.number %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @inspectionitem.name %>
+</p>
+
+<p>
+  <strong>Amountofmone:</strong>
+  <%= @inspectionitem.amountofmone %>
+</p>
+
+<p>
+  <strong>Subsidy:</strong>
+  <%= @inspectionitem.subsidy %>
+</p>
+
+<p>
+  <strong>Remarks:</strong>
+  <%= @inspectionitem.remarks %>
+</p>
+
+<p>
+  <strong>Hospitalflg:</strong>
+  <%= @inspectionitem.hospitalflg %>
+</p>
+
+<p>
+  <strong>Deleteflg:</strong>
+  <%= @inspectionitem.deleteflg %>
+</p>
+
+<%= link_to 'Edit', edit_inspectionitem_path(@inspectionitem) %> |
+<%= link_to 'Back', inspectionitems_path %>

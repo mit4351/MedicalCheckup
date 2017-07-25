@@ -1,0 +1,28 @@
+<h1>Editing Examinee</h1>
+
+<%= form_for(@examinee, :url => {:action => 'update'}) do |f| %>
+<table border="1">
+  <tr>
+    <th><%= f.label :name, '名前' %></th>
+    <td><%= f.text_field :name %></td>
+  </tr>
+  <tr>
+    <th>名前</th>
+    <td><%= select_tag 'note[point]', options_for_select(["1", "2", "3", "4", "5"]) %></td>
+  </tr>
+  <tr>
+    <th>性別</th>
+    <td><%= f.collection_select :sex, @sexs, :number, :name, :prompt => "なんか選んでよ" %></td>
+  </tr>
+  <tr>
+    <th>属性</th>
+    <td><%= f.collection_select :relationship, @relationships, :number, :name, :prompt => "なんか選んでよ" %></td>
+  </tr>
+
+
+
+</table>
+<%= f.submit '編集する' %>
+<% end %>
+<br>
+<%= link_to '戻る', medical_path(@examinee.medical.id) %>

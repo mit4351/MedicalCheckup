@@ -1,0 +1,1 @@
+json.array! @inspectionitems, partial: 'inspectionitems/inspectionitem', as: :inspectionitem

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Inspectionitems</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>Name</th>
+      <th>Amountofmone</th>
+      <th>Subsidy</th>
+      <th>Remarks</th>
+      <th>Hospitalflg</th>
+      <th>Deleteflg</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @inspectionitems.each do |inspectionitem| %>
+      <tr>
+        <td><%= inspectionitem.number %></td>
+        <td><%= inspectionitem.name %></td>
+        <td><%= inspectionitem.amountofmone %></td>
+        <td><%= inspectionitem.subsidy %></td>
+        <td><%= inspectionitem.remarks %></td>
+        <td><%= inspectionitem.hospitalflg %></td>
+        <td><%= inspectionitem.deleteflg %></td>
+        <td><%= link_to 'Show', inspectionitem %></td>
+        <td><%= link_to 'Edit', edit_inspectionitem_path(inspectionitem) %></td>
+        <td><%= link_to 'Destroy', inspectionitem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Inspectionitem', new_inspectionitem_path %>

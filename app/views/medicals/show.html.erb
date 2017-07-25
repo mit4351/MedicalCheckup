@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @medical.name %>
+</p>
+
+<p>
+  <strong>Str application period:</strong>
+  <%= @medical.str_application_period %>
+</p>
+
+<p>
+  <strong>End application period:</strong>
+  <%= @medical.end_application_period %>
+</p>
+
+<p>
+  <strong>Str implementation period:</strong>
+  <%= @medical.str_implementation_period %>
+</p>
+
+<p>
+  <strong>End implementation period:</strong>
+  <%= @medical.end_implementation_period %>
+</p>
+
+<p>
+  <strong>Remarks:</strong>
+  <%= @medical.remarks %>
+</p>
+
+<p>
+  <strong>Deleteflg:</strong>
+  <%= @medical.deleteflg %>
+</p>
+
+<ul>
+  <% @medical.examinees.each do | examinee| %>
+     <li>
+       <%= examinee.name %>
+       <%= link_to examinee.name, medical_examinee_path(examinee.medical_id,examinee.id)%>
+       <%= link_to "[編集]", edit_medical_examinee_path(examinee.medical_id,examinee.id)%>
+       <%= link_to '[Destroy]', medical_examinee_path(examinee.medical_id,examinee.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+     </li>
+  <% end %>
+
+  <li>
+    <%= form_for [@medical, @medical.examinees.build] do |f| %>
+       <%= f.text_field :name %>
+       <%= f.submit %>
+    <% end %>
+  </li>
+</ul>
+
+<%= link_to 'Edit', edit_medical_path(@medical) %> |
+<%= link_to 'Back', medicals_path %>

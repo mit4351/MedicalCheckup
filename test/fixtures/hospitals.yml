@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  number: 1
+  name: MyString
+  dayoftheweek: MyString
+  tel: MyString
+  zipcode: MyString
+  address: MyString
+  jcbflg: false
+  remarks: MyText
+  deleteflg: false
+
+two:
+  number: 1
+  name: MyString
+  dayoftheweek: MyString
+  tel: MyString
+  zipcode: MyString
+  address: MyString
+  jcbflg: false
+  remarks: MyText
+  deleteflg: false

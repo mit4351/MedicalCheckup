@@ -1,0 +1,1 @@
+json.partial! "inspectionitems/inspectionitem", inspectionitem: @inspectionitem

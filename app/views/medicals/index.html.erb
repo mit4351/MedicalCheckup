@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Medicals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Str application period</th>
+      <th>End application period</th>
+      <th>Str implementation period</th>
+      <th>End implementation period</th>
+      <th>Remarks</th>
+      <th>Deleteflg</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @medicals.each do |medical| %>
+      <tr>
+        <td><%= medical.name %></td>
+        <td><%= medical.str_application_period %></td>
+        <td><%= medical.end_application_period %></td>
+        <td><%= medical.str_implementation_period %></td>
+        <td><%= medical.end_implementation_period %></td>
+        <td><%= medical.remarks %></td>
+        <td><%= medical.deleteflg %></td>
+        <td><%= link_to 'Show', medical %></td>
+        <td><%= link_to 'Edit', edit_medical_path(medical) %></td>
+        <td><%= link_to 'Destroy', medical, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Medical', new_medical_path %>

@@ -1,0 +1,2 @@
+class Inspectionitem < ApplicationRecord
+end

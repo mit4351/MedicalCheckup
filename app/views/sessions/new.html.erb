@@ -1,0 +1,14 @@
+
+<div class="login">
+  <div id="form">
+    <h3 class="form-title">ログイン</h3>
+
+    <%= form_for(:session, url: sessions_path) do |f| %>
+        <p>被保険者番号</p>
+        <p class="enpno"><%= f.text_field :enpno %></p>
+        <p>Password</p>
+        <p class="pass"><%= f.password_field :password%></p>
+        <p class="submit"><%= f.submit 'ログインする' %></p>
+    <% end %>
+  </div>
+</div>
